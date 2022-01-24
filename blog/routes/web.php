@@ -18,12 +18,13 @@ use App\Models\Blogmodel;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/',function () {
-    return view('blogfront');
-});
+// Route::get('/',function () {
+//     return view('blogfront');
+// });
 
-Route::get('/blog',[Blogcontroller::class,'index']);
+Route::get('/',[Blogcontroller::class,'index']);
 Route::get('/blog/view',[Blogcontroller::class,'view']);
+
 Route::get('/blog/delete/{id}',[Blogcontroller::class,'delete'])->name('blog.delete');
 Route::get('/blog/edit/{id}',[Blogcontroller::class,'edit'])->name('blog.edit');
 Route::post('/blog/update/{id}',[Blogcontroller::class,'update'])->name('blog.update');

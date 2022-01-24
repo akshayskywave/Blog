@@ -12,11 +12,12 @@
   <body>
   <div class="container">
         <div class="row m-2">
-            <form  action="" class="col-9">
+            <form  action="" method="get" class="col-9">
             <div class="form-group">
               <input type="search" name="search" id="" placeholder="Search Name of Email" value="{{$search}}">
             </div>
-            <button type="button" class="btn btn-primary btn-lg btn-block">Search</button>
+            <button class="btn btn-primary btn-lg btn-block">Search</button>
+         
             </form>
             
              <div class="col-3">

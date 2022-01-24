@@ -11,8 +11,7 @@ class Blogcontroller extends Controller
     {
         $url = url('/blog');
         $title = "Registration form";
-        $data = compact('url','title');
-        return view('blogfront')->with($data);;
+        return view('blogfront',compact('url','title'));
     }
 
     public function store(Request $request)
@@ -41,10 +40,10 @@ class Blogcontroller extends Controller
     {
         $search = $request['search']??"";
         if ($search != ""){
-            $blogv = Blogmodel::where('Name',"",$search)->get();
+            $blogv = Blogmodel::where('Name',"like","%$search%")->orwhere('email',"like","%$search%")->get();
         }else{
             $blogv = Blogmodel::all();
-        }
+        }   
         return view('blog-view', compact('blogv','search'));
     }
 
